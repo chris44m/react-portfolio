@@ -2,7 +2,6 @@ import './index.scss';
 import LogoS3 from '../../../assets/images/newimg.svg'
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap-trial';
-import DrawSVGPlugin from 'gsap-trial/DrawSVGPlugin';
 
 const Logo = () => {
 
@@ -12,8 +11,6 @@ const Logo = () => {
 
 
     useEffect(() =>{
-        gsap.registerPlugin(DrawSVGPlugin)
-
         gsap.timeline()
         .to(bgRef.current, {
             duration: 1,
@@ -21,7 +18,6 @@ const Logo = () => {
         })
 
         .from(outlineLogoRef.current, {
-            drawSVG: 0,
             duration: 20,
         })
 
