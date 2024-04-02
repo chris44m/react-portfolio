@@ -2,7 +2,6 @@
   "name": "react-portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://chris44m.github.io/react-portfolio",
   "dependencies": {
     "@emailjs/browser": "^4.1.0",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
@@ -14,6 +13,7 @@
     "animate.css": "^4.1.1",
     "core-util-is": "^1.0.3",
     "gh-pages": "^6.1.1",
+    "gsap": "^3.12.5",
     "gsap-trial": "^3.12.5",
     "loaders.css": "^0.1.2",
     "react": "^18.2.0",
@@ -28,8 +28,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
