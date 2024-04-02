@@ -15,12 +15,10 @@ const Contact = () => {
     const form = useRef()
 
     useEffect(() => {
-        // Crear un temporizador
         const timer = setTimeout(() => {
           setLetterClass('text-animate-hover');
         }, 3000);
       
-        // Función de limpieza que cancela el temporizador
         return () => clearTimeout(timer);
       }, []);
 
@@ -71,7 +69,7 @@ const Contact = () => {
                                     <input placeholder="Asunto" type='text' name='asunto' required />
                                 </li>
                                 <li>
-                                    <textarea name='message' placeholder='Mensaje' required>
+                                    <textarea type='text' name='message' placeholder='Mensaje' required>
                                             
                                     </textarea>
                                 </li>
@@ -85,16 +83,19 @@ const Contact = () => {
                 <li>
                     <a target='_blank' rel='noreferrer' href='https://www.linkedin.com/in/christian-alfredo-arias-bejar-7a835a21b/'>
                         <FontAwesomeIcon icon={faLinkedin} color='#4d4d4e' className='anchor-icon' />
+                        <span className='sp'>LINKEDIN</span>
                     </a>
                 </li>
                 <li>
                     <a target='_blank' rel='noreferrer' href='https://github.com/chris44m'>
                         <FontAwesomeIcon icon={faGithub} color='#4d4d4e' className='anchor-icon' />
+                        <span className='sp'>GITHUB</span>                    
                     </a>
                 </li>
                 <li>
                     <a target='_blank' rel='noreferrer' href='https://www.instagram.com/christian44ab/'>
                         <FontAwesomeIcon icon={faInstagram} color='#4d4d4e' className='anchor-icon' />
+                        <span className='sp'>INSTAGRAM</span>
                     </a>
                 </li>
             </ul>

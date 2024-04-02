@@ -154,20 +154,23 @@
         position: fixed;
   
         &.mobile-show {
-          display: block;
+          display:block !important;
         }
   
         a {
+            font-size: 25px;
           display: flex;
           justify-content: center;
           align-items: center;
         }
   
         a:after {
+            font-size: 30px;
+            font-weight: bold;
           opacity: 1;
           position: initial;
           width: auto;
-          margin-left: 10PX;
+          margin-left: 10px;
         }
   
         a svg {
