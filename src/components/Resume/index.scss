@@ -1,7 +1,8 @@
 .resume-section {
-    width: 100%;
-    height: 100%;
-    padding: 1rem;
+  width: 100%; // Asegúrate de que el contenedor tome el ancho completo
+  max-height: 85vh; // Limita la altura para evitar que tome toda la pantalla
+  overflow-y: auto;
+  justify-content: center;
   }
   
   .download-button {
@@ -34,10 +35,12 @@
   
   @media screen and (max-width: 1200px) {
 
+    
     .resume{
       width: 100%;
-    height: 100%;
+      height: auto;
       padding: 1rem;
+      overflow: auto !important;
     }
     
     .download-button{
@@ -47,16 +50,4 @@
 
   }
   
-  @media (max-width: 600px) {
-
-    .resume{
-      width: 100%;
-    height: 100%;
-      padding: 1rem;
-    }
-  
-    .download-button {
-      font-size: calc(14px + 2vw);
-    }
-  }
   
