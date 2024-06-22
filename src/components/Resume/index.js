@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import pdf from "../../assets/CV2024-ChristianARIAS.pdf";
+import pdf from "../../assets/CV CHRISTIAN ARIAS BEJAR 2024 .pdf";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import 'react-pdf/dist/Page/TextLayer.css';
@@ -18,7 +18,7 @@ const Resume = () =>{
   return (
     <div className="resume-section">
       <div className="text-center">
-        <a className="download-button" href={pdf} download="CV-Christian-Arias.pdf">
+        <a className="download-button" href={pdf} download="CV CHRISTIAN ARIAS BEJAR 2024 .pdf">
           Descargar CV
         </a>
       </div>
