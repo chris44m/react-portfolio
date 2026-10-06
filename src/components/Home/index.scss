@@ -80,8 +80,43 @@
     gap: 12px;
 }
 
+.terminal-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.terminal-shortcuts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    button {
+        padding: 4px 10px;
+        background: transparent;
+        border: 1px solid $border-strong;
+        border-radius: 4px;
+        font-family: $font-mono;
+        font-size: 12px;
+        color: $accent-pale;
+        cursor: pointer;
+        transition: background 0.2s ease, border-color 0.2s ease;
+
+        &:hover:not(:disabled) {
+            background: rgba(81, 43, 212, 0.15);
+            border-color: $accent-mid;
+        }
+
+        &:disabled {
+            opacity: 0.4;
+            cursor: default;
+        }
+    }
+}
+
 .terminal-note {
-    align-self: flex-end;
     font-family: $font-mono;
     font-size: 13px;
     color: $accent-mid;
@@ -98,6 +133,7 @@
     border: 1px solid $border;
     border-radius: 12px;
     overflow: hidden;
+    cursor: text;
 }
 
 .terminal-bar {
@@ -131,10 +167,10 @@
     color: $text;
     white-space: pre-wrap;
     word-break: break-word;
-
-    code {
-        font-family: inherit;
-    }
+    height: 330px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: $border-strong transparent;
 
     .terminal-line {
         display: block;
@@ -142,6 +178,43 @@
 
         &.pending {
             visibility: hidden;
+        }
+    }
+
+    .terminal-input {
+        display: flex;
+
+        input {
+            flex: 1;
+            min-width: 0;
+            padding: 0;
+            background: transparent;
+            border: 0;
+            outline: none;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            color: $text;
+            caret-color: $accent-soft;
+
+            &::placeholder {
+                color: $text-dim;
+            }
+        }
+    }
+
+    .muted {
+        color: $text-dim;
+    }
+
+    .link {
+        color: $accent-pale;
+        text-decoration: underline;
+        text-decoration-color: $border-strong;
+        text-underline-offset: 3px;
+
+        &:hover {
+            text-decoration-color: $accent-pale;
         }
     }
 
@@ -218,5 +291,15 @@
     .terminal-body {
         font-size: 12px;
         padding: 14px 16px;
+        height: 300px;
+
+        .terminal-input input {
+            font-size: 16px;
+        }
+    }
+
+    .terminal-footer {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
