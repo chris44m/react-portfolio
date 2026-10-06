@@ -4,7 +4,7 @@ import AnimatedLetters from '../AnimatedLetters'
 import LogoTitle from '../../assets/images/logo-s.png'
 import './index.scss'
 import Logo from './Logo'
-import Loader from 'react-loaders'
+import Loader from '../Loader'
 import Type from './Type'
 
 const Home = () => {
@@ -59,7 +59,7 @@ const Home = () => {
 
             <Logo />
         </div>
-        <Loader type="ball-clip-rotate-multiple" />
+        <Loader />
         </>
     )
 }

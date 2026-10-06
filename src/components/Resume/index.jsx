@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import pdf from "../../assets/CV CHRISTIAN ARIAS BEJAR 2024 .pdf";
 import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import "react-pdf/dist/Page/AnnotationLayer.css";
 import 'react-pdf/dist/Page/TextLayer.css';
 import "./index.scss";
 
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+pdfjs.GlobalWorkerOptions.workerSrc = new URL('pdfjs-dist/build/pdf.worker.min.mjs', import.meta.url).toString();
 
 const Resume = () =>{
     const [numPages, setNumPages] = useState(null);

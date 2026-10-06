@@ -1,7 +1,7 @@
 import './App.scss';
 import { lazy, Suspense } from 'react';
 import { Routes,Route } from 'react-router-dom';
-import Loader from 'react-loaders';
+import Loader from './components/Loader';
 import Layout from './components/Layout';
 import Home from './components/Home';
 import About from './components/About';
@@ -18,7 +18,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cv" element={
-            <Suspense fallback={<Loader type="ball-clip-rotate-multiple" />}>
+            <Suspense fallback={<Loader />}>
               <Resume />
             </Suspense>
           } />
