@@ -119,16 +119,14 @@ const Contact = () => {
                 <div className='info-map'>
                     Christian Arias,
                     <br />
-                    Arequipa,
+                    Arequipa, Perú
                     <br />
-                    Av. Paris 301, Hunter <br />
-                    Arequipa-Peru <br />
                     <span>chris.29.01.44@gmail.com</span>
                 </div>
                 <div className='map-wrap'>
-                    <MapContainer center={[-16.440259, -71.557100]} zoom={13}>
+                    <MapContainer center={[-16.398866, -71.536961]} zoom={12}>
                         <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
-                        <Marker position={[-16.440259, -71.557100]} icon={mapMarker}>
+                        <Marker position={[-16.398866, -71.536961]} icon={mapMarker}>
 
                             <Popup>ENCUENTRAME AQUI.</Popup>
 
