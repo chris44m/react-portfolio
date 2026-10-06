@@ -1,7 +1,4 @@
-import { useEffect, useState } from 'react'
 import './index.scss'
-import AnimatedLetters from '../AnimatedLetters'
-import Loader from '../Loader'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { faLock } from '@fortawesome/free-solid-svg-icons'
@@ -33,54 +30,34 @@ const projects = [
 ]
 
 const Projects = () => {
-
-    const [letterClass, setLetterClass] = useState('text-animate')
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setLetterClass('text-animate-hover')
-        }, 3000)
-        return () => clearTimeout(timer)
-    }, [])
-
     return (
-        <>
-            <div className='container projects-page'>
-                <h1>
-                    <AnimatedLetters
-                        letterClass={letterClass}
-                        strArray={['P', 'r', 'o', 'y', 'e', 'c', 't', 'o', 's']}
-                        idx={15}
-                    />
-                </h1>
-
-                <div className='projects-grid'>
-                    {projects.map((project) => (
-                        <article className='project-card' key={project.title}>
-                            <h2>{project.title}</h2>
-                            <span className='project-meta'>{project.meta}</span>
-                            <p>{project.description}</p>
-                            <p className='project-highlight'>{project.highlight}</p>
-                            <ul className='project-tags'>
-                                {project.tags.map((tag) => (
-                                    <li key={tag}>{tag}</li>
-                                ))}
-                            </ul>
-                            {project.repo ? (
-                                <a className='project-link' href={project.repo} target='_blank' rel='noreferrer'>
-                                    <FontAwesomeIcon icon={faGithub} /> Ver código
-                                </a>
-                            ) : (
-                                <span className='project-link private'>
-                                    <FontAwesomeIcon icon={faLock} /> Repositorio privado
-                                </span>
-                            )}
-                        </article>
-                    ))}
-                </div>
+        <section id='proyectos' className='section projects'>
+            <h2 className='section-title'><span>02.</span>Proyectos</h2>
+            <div className='projects-grid'>
+                {projects.map((project) => (
+                    <article className='project-card' key={project.title}>
+                        <span className='project-meta'>{project.meta}</span>
+                        <h3>{project.title}</h3>
+                        <p>{project.description}</p>
+                        <p className='project-highlight'>{project.highlight}</p>
+                        <ul className='project-tags'>
+                            {project.tags.map((tag) => (
+                                <li key={tag} className='tag'>{tag}</li>
+                            ))}
+                        </ul>
+                        {project.repo ? (
+                            <a className='project-link' href={project.repo} target='_blank' rel='noreferrer'>
+                                <FontAwesomeIcon icon={faGithub} /> Ver código
+                            </a>
+                        ) : (
+                            <span className='project-link private'>
+                                <FontAwesomeIcon icon={faLock} /> Repositorio privado
+                            </span>
+                        )}
+                    </article>
+                ))}
             </div>
-            <Loader />
-        </>
+        </section>
     )
 }
 
