@@ -1,55 +1,30 @@
-@use "sass:color";
+@use '../../styles/variables' as *;
 
-.resume-section {
-  width: 100%; // Asegúrate de que el contenedor tome el ancho completo
-  max-height: 85vh; // Limita la altura para evitar que tome toda la pantalla
-  overflow-y: auto;
+.resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.resume {
+  display: flex;
   justify-content: center;
-  }
-  
-  .download-button {
-    width: 250px;
-    display: block;
-    font-family: 'Coolvetica';
-    margin: 1rem auto;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    background-color: #8d8d8d;
-    color: #333;
-    border: none;
-    border-radius: 0.3rem;
-    text-decoration: none;
-    text-align: center;
-    line-height: 1.5;
-  
-    &:hover {
-      background-color: color.adjust(#F0F8FF, $lightness: -25%);
-    }
-  }
-  
-  .resume {
-    max-height: 85vh;
-    overflow: auto;
+
+  .react-pdf__Document {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 24px;
   }
 
-  
-  @media screen and (max-width: 1200px) {
-
-    
-    .resume{
-      width: 100%;
-      height: auto;
-      padding: 1rem;
-      overflow: auto !important;
-    }
-    
-    .download-button{
-      
-      font-size: calc(12px + 1vw)
-    }
-
+  .react-pdf__Page {
+    border: 1px solid $border;
+    border-radius: $radius;
+    overflow: hidden;
   }
-  
-  
+}
+
+.resume-loading {
+  font-family: $font-mono;
+  color: $text-muted;
+}
