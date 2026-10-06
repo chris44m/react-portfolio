@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import LogoS from '../../assets/images/logo-s.png'
 import LogoSubtitle from '../../assets/images/Christian_sub.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faFile, faHome, faUser, faClose, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faFile, faHome, faUser, faClose, faBars, faCode } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 
@@ -28,6 +28,9 @@ const Sidebar = () => {
                 </NavLink>
                 <NavLink className='about-link' to='/about' onClick={() => setShowNav(false)}>
                     <FontAwesomeIcon icon={faUser} color='#4d4d4e' />
+                </NavLink>
+                <NavLink className='projects-link' to='/proyectos' onClick={() => setShowNav(false)}>
+                    <FontAwesomeIcon icon={faCode} color='#4d4d4e' />
                 </NavLink>
                 <NavLink className='contact-link' to='/contact' onClick={() => setShowNav(false)}>
                     <FontAwesomeIcon icon={faEnvelope} color='#4d4d4e' />
