@@ -1,0 +1,141 @@
+@use 'variables' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: $nav-height;
+}
+
+body {
+  margin: 0;
+  background: $bg;
+  color: $text;
+  font-family: $font-sans;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $accent-soft;
+}
+
+::selection {
+  background: $accent;
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid $accent-soft;
+  outline-offset: 3px;
+}
+
+input,
+textarea,
+button {
+  font-family: inherit;
+}
+
+.section {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 96px 24px;
+}
+
+.section-title {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 0 0 40px;
+  font-size: 32px;
+  font-weight: 700;
+  color: $text;
+
+  span {
+    font-family: $font-mono;
+    font-size: 16px;
+    font-weight: 400;
+    color: $accent-mid;
+  }
+
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: $border;
+    align-self: center;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: $radius;
+  border: 1px solid $accent;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary {
+  background: $accent;
+  color: #fff;
+
+  &:hover {
+    background: $accent-hover;
+    border-color: $accent-hover;
+  }
+}
+
+.btn-outline {
+  background: transparent;
+  color: $accent-pale;
+
+  &:hover {
+    background: rgba(81, 43, 212, 0.15);
+  }
+}
+
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border: 1px solid $border-strong;
+  border-radius: 4px;
+  font-family: $font-mono;
+  font-size: 12px;
+  color: $accent-pale;
+}
+
+@media screen and (max-width: $bp-sm) {
+  .section {
+    padding: 72px 20px;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
