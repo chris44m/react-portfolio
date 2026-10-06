@@ -1,33 +1,27 @@
 import './App.scss';
 import { lazy, Suspense } from 'react';
-import { Routes,Route } from 'react-router-dom';
+import { Navigate, Routes, Route } from 'react-router-dom';
 import Loader from './components/Loader';
 import Layout from './components/Layout';
-import Home from './components/Home';
-import About from './components/About';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
+import Main from './components/Main';
 
 const Resume = lazy(() => import('./components/Resume'));
 
 function App() {
   return (
-      <>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="proyectos" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/cv" element={
+          <Route index element={<Main />} />
+          <Route path="about" element={<Navigate to="/#sobre-mi" replace />} />
+          <Route path="proyectos" element={<Navigate to="/#proyectos" replace />} />
+          <Route path="contact" element={<Navigate to="/#contacto" replace />} />
+          <Route path="cv" element={
             <Suspense fallback={<Loader />}>
               <Resume />
             </Suspense>
           } />
         </Route>
       </Routes>
-
-      </>
   )
 }
 

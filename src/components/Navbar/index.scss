@@ -1,0 +1,129 @@
+@use '../../styles/variables' as *;
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $nav-height;
+    z-index: 100;
+    background: rgba(14, 12, 26, 0.88);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid $border;
+}
+
+.navbar-inner {
+    max-width: $content-width;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-logo {
+    font-family: $font-mono;
+    font-size: 15px;
+    color: $accent-soft;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: $text;
+    }
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    a {
+        font-family: $font-mono;
+        font-size: 14px;
+        color: $text-muted;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover,
+        &.active {
+            color: $text;
+        }
+
+        &.active::before {
+            content: '#';
+            color: $accent-mid;
+            margin-right: 2px;
+        }
+    }
+
+    .nav-cv {
+        padding: 6px 14px;
+        border: 1px solid $accent;
+        border-radius: 6px;
+        color: $text;
+
+        &:hover,
+        &.active {
+            background: rgba(81, 43, 212, 0.2);
+        }
+
+        &.active::before {
+            content: none;
+        }
+    }
+}
+
+.navbar-toggle {
+    display: none;
+    padding: 6px;
+    background: none;
+    border: 0;
+    color: $text;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: $bp-md) {
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-links {
+        display: none;
+        position: absolute;
+        top: $nav-height;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 8px 24px 20px;
+        background: $bg;
+        border-bottom: 1px solid $border;
+
+        &.open {
+            display: flex;
+        }
+
+        li {
+            width: 100%;
+        }
+
+        a {
+            display: block;
+            padding: 12px 0;
+            font-size: 16px;
+        }
+
+        .nav-cv {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 8px 16px;
+        }
+    }
+}
