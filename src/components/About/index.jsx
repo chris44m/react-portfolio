@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react'
 import './index.scss'
 import AnimatedLetters from '../AnimatedLetters'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCss3, faGitAlt, faHtml5, faJava, faNodeJs, faReact } from '@fortawesome/free-brands-svg-icons'
 import Loader from '../Loader'
+import dotnetIcon from 'devicon/icons/dotnetcore/dotnetcore-original.svg'
+import reactIcon from 'devicon/icons/react/react-original.svg'
+import sqlServerIcon from 'devicon/icons/microsoftsqlserver/microsoftsqlserver-original.svg'
+import postgresIcon from 'devicon/icons/postgresql/postgresql-original.svg'
+import dockerIcon from 'devicon/icons/docker/docker-original.svg'
+import gitIcon from 'devicon/icons/git/git-original.svg'
 
 
 const About = () => {
@@ -51,22 +55,22 @@ const About = () => {
                 <div className='stage-cube-cont'>
                     <div className='cubespinner'>
                         <div className='face1'>
-                            <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
+                            <img src={dotnetIcon} alt='.NET' />
                         </div>
                         <div className='face2'>
-                            <FontAwesomeIcon icon={faHtml5} color="#F06529" />
+                            <img src={reactIcon} alt='React' />
                         </div>
                         <div className='face3'>
-                            <FontAwesomeIcon icon={faCss3} color="#2884D9" />
+                            <img src={sqlServerIcon} alt='SQL Server' />
                         </div>
                         <div className='face4'>
-                            <FontAwesomeIcon icon={faJava} color="#DD0031" />
+                            <img src={postgresIcon} alt='PostgreSQL' />
                         </div>
                         <div className='face5'>
-                            <FontAwesomeIcon icon={faNodeJs} color="#EFD81D" />
+                            <img src={dockerIcon} alt='Docker' />
                         </div>
                         <div className='face6'>
-                            <FontAwesomeIcon icon={faGitAlt} color="#EC4D28" />
+                            <img src={gitIcon} alt='Git' />
                         </div>
                     </div>
                 </div>
