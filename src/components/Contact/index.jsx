@@ -3,13 +3,16 @@ import emailjs from '@emailjs/browser'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons'
+import { profile } from '../../data/profile'
 import './index.scss'
 
+const { email, linkedin, github, whatsapp } = profile.contacto
+
 const links = [
-    { icon: faEnvelope, label: 'chris.29.01.44@gmail.com', href: 'mailto:chris.29.01.44@gmail.com' },
-    { icon: faLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/christian-alfredo-arias-bejar-7a835a21b/' },
-    { icon: faGithub, label: 'GitHub', href: 'https://github.com/chris44m' },
-    { icon: faWhatsapp, label: 'WhatsApp', href: 'https://wa.me/51927478889' },
+    { icon: faEnvelope, label: email, href: `mailto:${email}` },
+    { icon: faLinkedin, label: 'LinkedIn', href: linkedin },
+    { icon: faGithub, label: 'GitHub', href: github },
+    { icon: faWhatsapp, label: 'WhatsApp', href: whatsapp },
 ]
 
 const statusMessages = {
