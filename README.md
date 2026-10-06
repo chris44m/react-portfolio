@@ -8,11 +8,30 @@ Portafolio personal de **Christian Arias**, Software Engineer en Arequipa, Perú
 
 ## Secciones
 
-- **Inicio:** presentación con una terminal que simula una petición `GET /api/christian` y responde con el perfil en JSON.
+- **Inicio:** presentación con una terminal que consulta en vivo `GET /api/christian` y muestra la respuesta.
 - **Sobre mí:** experiencia y enfoque, con un cubo 3D de las tecnologías principales.
 - **Proyectos:** sistema de gestión para restaurantes, HNCASE (central de esterilización) y sistema de reservas Santa Ursula.
 - **Contacto:** formulario con envío por EmailJS y enlaces a correo, LinkedIn, GitHub y WhatsApp.
 - **CV:** visor del currículum en PDF con descarga en español e inglés.
+
+## API
+
+El perfil también está disponible como JSON en un endpoint público (función serverless de Vercel):
+
+```bash
+curl https://react-portfolio-gamma-three.vercel.app/api/christian
+```
+
+| | |
+|---|---|
+| Método | `GET` (otros métodos responden `405`) |
+| Formato | `application/json` con sangría |
+| CORS | Abierto (`Access-Control-Allow-Origin: *`) |
+| Caché | 1 hora en la CDN de Vercel |
+
+Campos: `nombre`, `titulo`, `rol`, `ubicacion`, `disponible`, `stackPrincipal`, `stack`, `experiencia`, `proyectos`, `contacto`, `cv` y `sitio`.
+
+Los datos salen de `src/data/profile.js`, la misma fuente que usan las secciones del sitio. En desarrollo, el endpoint responde en `http://localhost:3000/api/christian`.
 
 ## Stack
 
@@ -57,7 +76,10 @@ src/
 │   ├── Projects/    Tarjetas de proyectos
 │   ├── Contact/     Formulario y enlaces de contacto
 │   └── Resume/      Visor del CV
+├── data/            Datos del perfil (fuente única para el sitio y la API)
 └── styles/          Variables de diseño y estilos globales
+api/
+└── christian.js     Endpoint GET /api/christian
 ```
 
 ## Contacto
