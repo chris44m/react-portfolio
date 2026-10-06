@@ -34,16 +34,16 @@ const About = () => {
                         />
                     </h1>
                     <p className='me' style={{fontFamily: 'Helvetica Neue'}}>
-                        Estoy en el último año de Ingeniería de Computación y Sistemas en la Universidad San Martín de Porres, apasionado por el desarrollo de software y la innovación tecnológica.
-                    </p>
-                    <p className='me' align="LEFT" style={{fontFamily: 'Helvetica Neue'}}>
-                        Destaco en C# y JavaScript, creando soluciones robustas y experiencias web interactivas. Con práctica en Java, desarrollo aplicaciones multiplataforma eficientes. En bases de datos, manejo PostgreSQL y MySQL, diseñando esquemas que optimizan el rendimiento de las aplicaciones.
+                        Soy Ingeniero de Computación y Sistemas por la Universidad San Martín de Porres y trabajo como desarrollador backend y full stack. Me especializo en .NET, ASP.NET Core, APIs REST, SQL Server y PostgreSQL.
                     </p>
                     <p className='me' style={{fontFamily: 'Helvetica Neue'}}>
-                        Utilizo herramientas como Figma para diseño UI, Visual Studio Code para desarrollo, y Postman para pruebas de APIs, buscando siempre la eficiencia y la calidad en el proceso de desarrollo.
+                        En WebControl Systems desarrollo y mantengo aplicaciones web en .NET con arquitectura MVC y principios SOLID, y participo en la migración de sistemas legados en ASP Clásico hacia .NET, optimizando consultas y procedimientos almacenados en SQL Server. Antes, en ALBIZIM, construí APIs y servicios backend en C# con integraciones REST y SOAP.
                     </p>
                     <p className='me' style={{fontFamily: 'Helvetica Neue'}}>
-                        Actualmente, amplío mis conocimientos en React, aprendiendo desde sus fundamentos hasta técnicas avanzadas como hooks y gestión del estado, con el objetivo de crear aplicaciones web modernas y escalables.
+                        Como freelance diseñé y construí por mi cuenta un sistema de gestión para restaurantes con backend en ASP.NET Core, Entity Framework Core, PostgreSQL y autenticación JWT, y frontend en React, TypeScript y Tailwind CSS, desplegado con Docker en Railway y en Vercel.
+                    </p>
+                    <p className='me' style={{fontFamily: 'Helvetica Neue'}}>
+                        Trabajo también con herramientas de desarrollo asistido por IA como Claude Code y OpenCode, revisando y validando siempre el código con foco en calidad, seguridad y confiabilidad. Me gusta analizar sistemas complejos y convertir requerimientos de negocio en soluciones técnicas sólidas.
                     </p>
 
                 </div>
