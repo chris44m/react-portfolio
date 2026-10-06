@@ -6,7 +6,6 @@ import '@fontsource/inter/700.css';
 import '@fontsource/jetbrains-mono/400.css';
 import '@fontsource/jetbrains-mono/500.css';
 import './styles/global.scss';
-import 'animate.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 

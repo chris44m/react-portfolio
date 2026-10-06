@@ -1,7 +1,5 @@
-import './App.scss';
 import { lazy, Suspense } from 'react';
 import { Navigate, Routes, Route } from 'react-router-dom';
-import Loader from './components/Loader';
 import Layout from './components/Layout';
 import Main from './components/Main';
 
@@ -16,7 +14,7 @@ function App() {
           <Route path="proyectos" element={<Navigate to="/#proyectos" replace />} />
           <Route path="contact" element={<Navigate to="/#contacto" replace />} />
           <Route path="cv" element={
-            <Suspense fallback={<Loader />}>
+            <Suspense fallback={<p className="section">Cargando CV…</p>}>
               <Resume />
             </Suspense>
           } />
