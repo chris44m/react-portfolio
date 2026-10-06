@@ -7,7 +7,8 @@ const lines = [
     [{ text: '{' }],
     [{ text: '  ' }, { text: '"rol"', type: 'key' }, { text: ': ' }, { text: '"Backend & Full Stack Developer"', type: 'string' }, { text: ',' }],
     [{ text: '  ' }, { text: '"stack"', type: 'key' }, { text: ': [' }, { text: '".NET"', type: 'string' }, { text: ', ' }, { text: '"SQL Server"', type: 'string' }, { text: ', ' }, { text: '"PostgreSQL"', type: 'string' }, { text: ', ' }, { text: '"React"', type: 'string' }, { text: '],' }],
-    [{ text: '  ' }, { text: '"ubicacion"', type: 'key' }, { text: ': ' }, { text: '"Arequipa, PE"', type: 'string' }],
+    [{ text: '  ' }, { text: '"ubicacion"', type: 'key' }, { text: ': ' }, { text: '"Arequipa, PE"', type: 'string' }, { text: ',' }],
+    [{ text: '  ' }, { text: '"disponible"', type: 'key' }, { text: ': ' }, { text: 'true', type: 'bool' }],
     [{ text: '}' }],
 ]
 
@@ -34,7 +35,7 @@ const Terminal = () => {
         <div
             className='terminal'
             role='img'
-            aria-label='Terminal: GET /api/christian responde 200 OK con rol Backend & Full Stack Developer, stack .NET, SQL Server, PostgreSQL y React, ubicación Arequipa'
+            aria-label='Terminal: GET /api/christian responde 200 OK con rol Backend & Full Stack Developer, stack .NET, SQL Server, PostgreSQL y React, ubicación Arequipa y disponible'
         >
             <div className='terminal-bar'>
                 <span />
