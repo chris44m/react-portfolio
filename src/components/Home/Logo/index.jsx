@@ -1,7 +1,7 @@
 import './index.scss';
 import LogoS3 from '../../../assets/images/newimg.svg'
 import { useEffect, useRef } from 'react';
-import gsap from 'gsap-trial';
+import gsap from 'gsap';
 
 const Logo = () => {
 
