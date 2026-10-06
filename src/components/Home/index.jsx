@@ -1,66 +1,53 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import AnimatedLetters from '../AnimatedLetters'
-import LogoTitle from '../../assets/images/logo-s.png'
+import Terminal from './Terminal'
+import cvEs from '../../assets/CV_Christian_Arias_ES.pdf'
 import './index.scss'
-import Logo from './Logo'
-import Loader from '../Loader'
-import Type from './Type'
+
+const nameArray = 'Christian Arias'.split('')
+const roleArray = 'software engineer.'.split('')
+const stack = ['.NET', 'ASP.NET Core', 'SQL Server', 'PostgreSQL', 'React', 'TypeScript', 'Docker']
 
 const Home = () => {
 
     const [letterClass, setLetterClass] = useState('text-animate')
-    const nameArray = ['h', 'r', 'i', 's', 't', 'i', 'a', 'n']
-    const jobArray = ['s', 'o', 'f', 't', 'w', 'a', 'r', 'e', ' ', 'e', 'n', 'g', 'i', 'n', 'e', 'e', 'r', '.']
 
     useEffect(() => {
         const timer = setTimeout(() => {
-          setLetterClass('text-animate-hover');
-        }, 4000);
-        return () => clearTimeout(timer);
-      }, []); // Dependencias vacías para que el efecto se ejecute solo una vez
-      
+            setLetterClass('text-animate-hover')
+        }, 3500)
+        return () => clearTimeout(timer)
+    }, [])
 
     return (
-        <>
-
-        <div className="container home-page">
-            <div className="text-zone">
-                
-                <h1>
-                    <span className={letterClass}>H</span>
-                    <span className={`${letterClass} _12`}>o</span>
-                    <span className={`${letterClass} _12`}>l</span>
-                    <span className={`${letterClass} _12`}>a,</span>
-                    <br />
-                    <span className={`${letterClass} _13`}>S</span>
-                    <span className={`${letterClass} _14`}>o</span>
-                    <span className={`${letterClass} _15`}>y</span>
-
-                    <img src={LogoTitle} alt="developer" />
-                    <AnimatedLetters 
-                    letterClass={letterClass}
-                    strArray={nameArray}
-                    idx={15} />
-
-                    <br />
-                    <AnimatedLetters 
-                    letterClass={letterClass}
-                        strArray={jobArray}
-                        idx={22} />
-                </h1>
-                <h2>Backend & Full Stack Developer / .NET / React</h2>
-                <div style={{ padding: 50, textAlign: "left", fontSize:50, color: "#C0C0C0", fontFamily: 'La Belle Aurore'  }}>
-                <Type />
-              </div>
-                <Link to="/contact" className='flat-button'>CONTACTAME</Link>
-
+        <section id='inicio' className='hero'>
+            <div className='hero-inner'>
+                <div className='hero-text'>
+                    <p className='hero-kicker'>// Arequipa, Perú</p>
+                    <h1>
+                        <span className='hero-greeting'>Hola, soy</span>
+                        <span className='hero-name'>
+                            <AnimatedLetters letterClass={letterClass} strArray={nameArray} idx={1} />
+                        </span>
+                        <span className='hero-role'>
+                            <AnimatedLetters letterClass={letterClass} strArray={roleArray} idx={16} />
+                        </span>
+                    </h1>
+                    <p className='hero-subtitle'>Backend & Full Stack Developer · .NET · React</p>
+                    <div className='hero-actions'>
+                        <Link className='btn btn-primary' to='/#proyectos'>Ver proyectos</Link>
+                        <a className='btn btn-outline' href={cvEs} download='CV_Christian_Arias_ES.pdf'>Descargar CV</a>
+                    </div>
+                </div>
+                <Terminal />
             </div>
-
-            <Logo />
-        </div>
-        <Loader />
-        </>
+            <ul className='hero-stack'>
+                {stack.map((item) => (
+                    <li key={item} className='tag'>{item}</li>
+                ))}
+            </ul>
+        </section>
     )
 }
 
