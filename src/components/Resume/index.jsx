@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import pdf from "../../assets/CV CHRISTIAN ARIAS BEJAR 2024 .pdf";
+import pdf from "../../assets/CV_Christian_Arias_ES.pdf";
+import pdfEn from "../../assets/CV_Christian_Arias_EN.pdf";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import 'react-pdf/dist/Page/TextLayer.css';
@@ -18,8 +19,11 @@ const Resume = () =>{
   return (
     <div className="resume-section">
       <div className="text-center">
-        <a className="download-button" href={pdf} download="CV CHRISTIAN ARIAS BEJAR 2024 .pdf">
+        <a className="download-button" href={pdf} download="CV_Christian_Arias_ES.pdf">
           Descargar CV
+        </a>
+        <a className="download-button" href={pdfEn} download="CV_Christian_Arias_EN.pdf">
+          Download CV (English)
         </a>
       </div>
 
@@ -35,8 +39,11 @@ const Resume = () =>{
       </div>
 
       <div className="text-center">
-        <a className="download-button" href={pdf} download="CV-Christian-Arias.pdf">
+        <a className="download-button" href={pdf} download="CV_Christian_Arias_ES.pdf">
           Descargar CV
+        </a>
+        <a className="download-button" href={pdfEn} download="CV_Christian_Arias_EN.pdf">
+          Download CV (English)
         </a>
       </div>
     </div>
