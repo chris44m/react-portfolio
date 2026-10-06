@@ -23,16 +23,16 @@ const Sidebar = () => {
             </Link>
             <nav className={showNav ? 'mobile-show' : ''}>
 
-                <NavLink exact='true' activeclassname='active' to='/' onClick={() => setShowNav(false)}>
+                <NavLink end to='/' onClick={() => setShowNav(false)}>
                     <FontAwesomeIcon icon={faHome} color='#4d4d4e' />
                 </NavLink>
-                <NavLink exact='true' activeclassname='active' className='about-link' to='/about' onClick={() => setShowNav(false)}>
+                <NavLink className='about-link' to='/about' onClick={() => setShowNav(false)}>
                     <FontAwesomeIcon icon={faUser} color='#4d4d4e' />
                 </NavLink>
-                <NavLink exact='true' activeclassname='active' className='contact-link' to='/contact' onClick={() => setShowNav(false)}>
+                <NavLink className='contact-link' to='/contact' onClick={() => setShowNav(false)}>
                     <FontAwesomeIcon icon={faEnvelope} color='#4d4d4e' />
                 </NavLink>
-                <NavLink exact='true' activeclassname='active' className='file-link' to='/cv' onClick={() => setShowNav(false)}>
+                <NavLink className='file-link' to='/cv' onClick={() => setShowNav(false)}>
                     <FontAwesomeIcon icon={faFile} color='#4d4d4e' />
                 </NavLink>
                 <FontAwesomeIcon

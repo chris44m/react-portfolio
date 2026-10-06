@@ -1,10 +1,13 @@
 import './App.scss';
+import { lazy, Suspense } from 'react';
 import { Routes,Route } from 'react-router-dom';
+import Loader from 'react-loaders';
 import Layout from './components/Layout';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
-import Resume from './components/Resume';
+
+const Resume = lazy(() => import('./components/Resume'));
 
 function App() {
   return (
@@ -14,10 +17,14 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/cv" element={<Resume />} />
+          <Route path="/cv" element={
+            <Suspense fallback={<Loader type="ball-clip-rotate-multiple" />}>
+              <Resume />
+            </Suspense>
+          } />
         </Route>
       </Routes>
-      
+
       </>
   )
 }

@@ -1,7 +1,6 @@
 $primary-color: #F0F8FF;
 
-@import 'animate.css';
-@import 'loaders.css/src/animations/ball-clip-rotate-multiple.scss';
+@use 'loaders.css/src/animations/ball-clip-rotate-multiple';
 
 @font-face {
   font-family: 'Helvetica Neue';

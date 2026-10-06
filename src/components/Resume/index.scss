@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .resume-section {
   width: 100%; // Asegúrate de que el contenedor tome el ancho completo
   max-height: 85vh; // Limita la altura para evitar que tome toda la pantalla
@@ -21,7 +23,7 @@
     line-height: 1.5;
   
     &:hover {
-      background-color: darken(#F0F8FF, 25%);
+      background-color: color.adjust(#F0F8FF, $lightness: -25%);
     }
   }
   
