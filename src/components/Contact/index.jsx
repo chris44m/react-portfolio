@@ -1,144 +1,95 @@
-import Loader from '../Loader'
-import './index.scss'
-import AnimatedLetters from '../AnimatedLetters'
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
-import L from 'leaflet'
-import 'leaflet/dist/leaflet.css'
-import markerIcon from 'leaflet/dist/images/marker-icon.png'
-import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png'
-import markerShadow from 'leaflet/dist/images/marker-shadow.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons'
+import './index.scss'
 
-const mapMarker = L.icon({
-    iconUrl: markerIcon,
-    iconRetinaUrl: markerIcon2x,
-    shadowUrl: markerShadow,
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    shadowSize: [41, 41]
-})
+const links = [
+    { icon: faEnvelope, label: 'chris.29.01.44@gmail.com', href: 'mailto:chris.29.01.44@gmail.com' },
+    { icon: faLinkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/christian-alfredo-arias-bejar-7a835a21b/' },
+    { icon: faGithub, label: 'GitHub', href: 'https://github.com/chris44m' },
+    { icon: faWhatsapp, label: 'WhatsApp', href: 'https://wa.me/51927478889' },
+]
 
+const statusMessages = {
+    sending: 'Enviando…',
+    sent: 'Mensaje enviado. Te responderé a la brevedad.',
+    error: 'No se pudo enviar el mensaje. Inténtalo otra vez o escríbeme por correo.',
+}
 
 const Contact = () => {
-
-    const [letterClass, setLetterClass] = useState('text-animate')
     const form = useRef()
+    const [status, setStatus] = useState('idle')
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-          setLetterClass('text-animate-hover');
-        }, 3000);
-      
-        return () => clearTimeout(timer);
-      }, []);
-
-      const sendEmail = (e) =>{
-        e.preventDefault();
+    const sendEmail = (e) => {
+        e.preventDefault()
+        setStatus('sending')
         emailjs
-        .sendForm(
-            'service_ernqlbi',
-            'template_r6li941',
-            form.current,   
-            'FhARJLiEsvuGYdW52'
-        )
-        .then(
-            () => {
-                alert('MENSAJE ENVIADO!')
-                window.location.reload(false)
-            },
-            () => {
-                alert('Mensaje no Enviado, intentalo otra vez')
-            }
-        )
-      }
+            .sendForm('service_ernqlbi', 'template_r6li941', form.current, 'FhARJLiEsvuGYdW52')
+            .then(
+                () => {
+                    setStatus('sent')
+                    form.current.reset()
+                },
+                () => setStatus('error')
+            )
+    }
+
     return (
-        <>
-
-            <div className="container contact-page">
-                <div className='text-zone'>
-                    <h1>
-                        <AnimatedLetters
-                        letterClass={letterClass} 
-                        strArray={['C','o','n','t','a','c','t','a','m','e' ]} 
-                        idx={15}/>
-                    </h1>
-
-                    <p style={{ padding: 10, textAlign: "left", fontSize:25, color: "#C0C0C0", fontFamily: 'Helvetica Neue'  }}>
-                        Dejame un mensaje y te contestare a la brevedad.
-                    </p>
-                    <div className='contact-form'>
-                        <form ref={form} onSubmit={sendEmail}>
-                            <ul>
-                                <li className='half'>
-                                    <input type='text' name='name' placeholder='Nombre' required />
-                                </li>
-                                <li className='half'>
-                                    <input type='email' name='email' placeholder='Email' required />
-                                </li>
-                                <li>
-                                    <input placeholder="Asunto" type='text' name='asunto' required />
-                                </li>
-                                <li>
-                                    <textarea type='text' name='message' placeholder='Mensaje' required>
-                                            
-                                    </textarea>
-                                </li>
-                                <li>
-                                    <input type='submit' className='flat-button' value="ENVIAR"/>
-                                </li>
-                            </ul>
-                        </form>
-
-                        <ul>
-                <li>
-                    <a target='_blank' rel='noreferrer' href='https://www.linkedin.com/in/christian-alfredo-arias-bejar-7a835a21b/'>
-                        <FontAwesomeIcon icon={faLinkedin} color='#4d4d4e' className='anchor-icon' />
-                        <span className='sp'>LINKEDIN</span>
-                    </a>
-                </li>
-                <li>
-                    <a target='_blank' rel='noreferrer' href='https://github.com/chris44m'>
-                        <FontAwesomeIcon icon={faGithub} color='#4d4d4e' className='anchor-icon' />
-                        <span className='sp'>GITHUB</span>                    
-                    </a>
-                </li>
-                <li>
-                    <a target='_blank' rel='noreferrer' href='https://wa.me/51927478889'>
-                        <FontAwesomeIcon icon={faWhatsapp} color='#4d4d4e' className='anchor-icon' />
-                        <span className='sp'>WHATSAPP</span>
-                    </a>
-                </li>
-            </ul>
-
+        <section id='contacto' className='section contact'>
+            <h2 className='section-title'><span>03.</span>Contacto</h2>
+            <div className='contact-grid'>
+                <form ref={form} onSubmit={sendEmail} className='contact-form'>
+                    <div className='form-row'>
+                        <label>
+                            <span>Nombre</span>
+                            <input type='text' name='name' required />
+                        </label>
+                        <label>
+                            <span>Email</span>
+                            <input type='email' name='email' required />
+                        </label>
                     </div>
-                </div>
-                <div className='info-map'>
-                    Christian Arias,
-                    <br />
-                    Arequipa, Perú
-                    <br />
-                    <span>chris.29.01.44@gmail.com</span>
-                </div>
-                <div className='map-wrap'>
-                    <MapContainer center={[-16.398866, -71.536961]} zoom={12}>
-                        <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
-                        <Marker position={[-16.398866, -71.536961]} icon={mapMarker}>
+                    <label>
+                        <span>Asunto</span>
+                        <input type='text' name='asunto' required />
+                    </label>
+                    <label>
+                        <span>Mensaje</span>
+                        <textarea name='message' rows='6' required />
+                    </label>
+                    <div className='form-footer'>
+                        <button type='submit' className='btn btn-primary' disabled={status === 'sending'}>
+                            Enviar mensaje
+                        </button>
+                        <p className={`form-status ${status}`} role='status'>
+                            {statusMessages[status] ?? ''}
+                        </p>
+                    </div>
+                </form>
 
-                            <Popup>ENCUENTRAME AQUI.</Popup>
-
-                        </Marker>
-
-                    </MapContainer>
-
-                </div>
+                <aside className='contact-info'>
+                    <p>
+                        ¿Tienes un proyecto o una oportunidad? Déjame un mensaje y te contestaré a la brevedad.
+                    </p>
+                    <ul>
+                        {links.map(({ icon, label, href }) => (
+                            <li key={label}>
+                                <a href={href} target={href.startsWith('mailto') ? undefined : '_blank'} rel='noreferrer'>
+                                    <FontAwesomeIcon icon={icon} fixedWidth />
+                                    {label}
+                                </a>
+                            </li>
+                        ))}
+                        <li className='contact-location'>
+                            <FontAwesomeIcon icon={faLocationDot} fixedWidth />
+                            Arequipa, Perú
+                        </li>
+                    </ul>
+                </aside>
             </div>
-            <Loader />
-        
-        </>
+        </section>
     )
 }
 
