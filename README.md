@@ -8,11 +8,30 @@ Portafolio personal de **Christian Arias**, Software Engineer en Arequipa, Perú
 
 ## Secciones
 
-- **Inicio:** presentación con una terminal que consulta en vivo `GET /api/christian` y muestra la respuesta.
+- **Inicio:** presentación con una terminal interactiva que consulta en vivo `GET /api/christian` y acepta comandos (ver abajo).
 - **Sobre mí:** experiencia y enfoque, con un cubo 3D de las tecnologías principales.
 - **Proyectos:** sistema de gestión para restaurantes, HNCASE (central de esterilización) y sistema de reservas Santa Ursula.
 - **Contacto:** formulario con envío por EmailJS y enlaces a correo, LinkedIn, GitHub y WhatsApp.
 - **CV:** visor del currículum en PDF con descarga en español e inglés.
+
+## Terminal interactiva
+
+Al terminar la animación inicial, la terminal de la portada acepta comandos:
+
+| Comando | Qué hace |
+|---|---|
+| `help` | Lista los comandos |
+| `whoami` | Nombre, título y rol |
+| `stack` | Stack completo por categoría |
+| `experiencia` | Empresas, cargos y fechas |
+| `proyectos` | Proyectos y su stack |
+| `contacto` | Correo, LinkedIn y GitHub |
+| `ir <sección>` | Navega a `sobre-mi`, `proyectos` o `contacto` |
+| `cv` | Abre la página del CV |
+| `curl` | Consulta `GET /api/christian` y muestra el JSON completo |
+| `clear` | Limpia la terminal |
+
+Soporta historial con ↑ / ↓ y autocompletado con Tab. En celular hay botones de comandos rápidos.
 
 ## API
 
