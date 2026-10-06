@@ -5,7 +5,7 @@ import LogoS from '../../assets/images/logo-s.png'
 import LogoSubtitle from '../../assets/images/Christian_sub.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faFile, faHome, faUser, faClose, faBars, faCode } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 
 
@@ -58,8 +58,8 @@ const Sidebar = () => {
                     </a>
                 </li>
                 <li>
-                    <a target='_blank' rel='noreferrer' href='https://www.instagram.com/christian44ab/'>
-                        <FontAwesomeIcon icon={faInstagram} color='#4d4d4e' className='anchor-icon' />
+                    <a target='_blank' rel='noreferrer' href='https://wa.me/51927478889'>
+                        <FontAwesomeIcon icon={faWhatsapp} color='#4d4d4e' className='anchor-icon' />
                     </a>
                 </li>
             </ul>

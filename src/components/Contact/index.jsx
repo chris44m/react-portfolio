@@ -10,7 +10,7 @@ import markerIcon from 'leaflet/dist/images/marker-icon.png'
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png'
 import markerShadow from 'leaflet/dist/images/marker-shadow.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const mapMarker = L.icon({
     iconUrl: markerIcon,
@@ -107,9 +107,9 @@ const Contact = () => {
                     </a>
                 </li>
                 <li>
-                    <a target='_blank' rel='noreferrer' href='https://www.instagram.com/christian44ab/'>
-                        <FontAwesomeIcon icon={faInstagram} color='#4d4d4e' className='anchor-icon' />
-                        <span className='sp'>INSTAGRAM</span>
+                    <a target='_blank' rel='noreferrer' href='https://wa.me/51927478889'>
+                        <FontAwesomeIcon icon={faWhatsapp} color='#4d4d4e' className='anchor-icon' />
+                        <span className='sp'>WHATSAPP</span>
                     </a>
                 </li>
             </ul>
