@@ -11,7 +11,7 @@ const Home = () => {
 
     const [letterClass, setLetterClass] = useState('text-animate')
     const nameArray = ['h', 'r', 'i', 's', 't', 'i', 'a', 'n']
-    const jobArray = ['w', 'e', 'b', ' ', 'd', 'e', 'v', 'e', 'l', 'o', 'p', 'e', 'r', '.']
+    const jobArray = ['s', 'o', 'f', 't', 'w', 'a', 'r', 'e', ' ', 'e', 'n', 'g', 'i', 'n', 'e', 'e', 'r', '.']
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -49,7 +49,7 @@ const Home = () => {
                         strArray={jobArray}
                         idx={22} />
                 </h1>
-                <h2>FrontEnd Developer / JavaScript / React </h2>
+                <h2>Backend & Full Stack Developer / .NET / React</h2>
                 <div style={{ padding: 50, textAlign: "left", fontSize:50, color: "#C0C0C0", fontFamily: 'La Belle Aurore'  }}>
                 <Type />
               </div>
